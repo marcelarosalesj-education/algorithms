@@ -1,9 +1,12 @@
 import time 
 import random
+import sys
+import pdb
 
 def generate_random_list(num):
 	lst = []
-	lst.append(random.randint(0, 100))
+	for i in range(0,num):
+		lst.append(random.randint(0, 100))
 	return lst
 
 def merge_sort_my_solution(lst, ascending = True):
@@ -84,7 +87,10 @@ def mergeSort(alist):
    return alist
 
 
-unsortedLst = generate_random_list(40)
+length = int(sys.argv[1])
+unsortedLst = generate_random_list(length)
+print unsortedLst
+
 start_time = time.time()
 sortedLst = merge_sort_my_solution(unsortedLst)
 elapsed_time = time.time() - start_time
